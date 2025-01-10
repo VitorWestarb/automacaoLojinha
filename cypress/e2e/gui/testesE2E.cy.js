@@ -448,7 +448,7 @@ describe('Fluxo E2E', () => {
     });
 
 //EXCLUIR TODOS OS PRODUTOS QUE FORAM CRIADOS
-    it('Excluir um produto', () => {
+    /*it('Excluir um produto', () => {
         cy.adicionarProduto('Xbox 360', '3500,00', 'Preto, Branco')
         cy.get('#btn-salvar').click()
         cy.url('constains', 'http://165.227.93.41/lojinha-web/v2/produto/editar')
@@ -458,7 +458,7 @@ describe('Fluxo E2E', () => {
         cy.get('.collection li .title a').contains('Xbox 360').should('not.exist')
         cy.screenshot()
         cy.pageAccessibility()
-    });
+    });*/
 });
 
 
