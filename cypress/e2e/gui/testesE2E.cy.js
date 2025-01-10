@@ -6,6 +6,7 @@ const senha = 'vitor2025'
 describe('Fluxo E2E', () => {
     beforeEach(() => {
         cy.login(usuario, senha)
+        cy.wait(2000)
         cy.url().should('eq', 'http://165.227.93.41/lojinha-web/v2/produto')
     });
 //CRIAR PRODUTO
