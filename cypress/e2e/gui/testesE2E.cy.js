@@ -2,12 +2,12 @@ const { faker } = require("@faker-js/faker");
 
 
 describe('Fluxo E2E', () => {
-    beforeEach(() => {
-        cy.visit("http://165.227.93.41/lojinha-web/v2/")
+    /*beforeEach(() => {
         cy.login('vitor2025', 'vitor2025')
-    });
+    });*/
 //CRIAR PRODUTO
     it('Criar um produto com sucesso', () => {
+        cy.login('vitor2025', 'vitor2025')
         cy.adicionarProduto('Xbox 720', '3500,00', 'Preto, Branco')
         cy.get('#btn-salvar').click()
         cy.url('constains', 'http://165.227.93.41/lojinha-web/v2/produto/editar')
