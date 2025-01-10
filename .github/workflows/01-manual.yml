@@ -14,7 +14,7 @@ jobs:
       - name: Instalando testes de acessibilidade
         run: npm i cypress-axe cypress-axe-core
 
-      - name: Istalando o relatório de testes
+      - name: Instalando o relatório de testes
         run: npm i mochawesome cypress-mochawesome-reporter --save-dev
 
       - name: Testes E2E

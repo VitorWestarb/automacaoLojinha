@@ -1,7 +1,7 @@
 const { faker } = require("@faker-js/faker");
 
-const usuario = 'vitor2025'
-const senha = 'vitor2025'
+let usuario = 'vitor2025'
+let senha = 'vitor2025'
 
 describe('Fluxo E2E', () => {
     beforeEach(() => {
