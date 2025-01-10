@@ -6,7 +6,7 @@ describe('Fluxo E2E', () => {
         cy.login('vitor2025', 'vitor2025')
     });
 //CRIAR PRODUTO
-    it('Criar um produto com sucesso', () => {
+    it.only('Criar um produto com sucesso', () => {
         cy.adicionarProduto('Xbox 720', '3500,00', 'Preto, Branco')
         cy.get('#btn-salvar').click()
         cy.url('constains', 'http://165.227.93.41/lojinha-web/v2/produto/editar')
@@ -16,7 +16,7 @@ describe('Fluxo E2E', () => {
         //cy.screenshot()
         //cy.pageAccessibility()
     });
-    it('Criar um produto com valor limite máximo', () => {
+    it.only('Criar um produto com valor limite máximo', () => {
         cy.adicionarProduto('Xbox 720', '7000.00', 'Preto, Branco')
         cy.get('#btn-salvar').click()
         cy.url('constains', 'http://165.227.93.41/lojinha-web/v2/produto/editar')
@@ -26,7 +26,7 @@ describe('Fluxo E2E', () => {
         //cy.screenshot()
         //cy.pageAccessibility()
     });
-    it('Criar um produto com valor limite minimo', () => {
+    it.only('Criar um produto com valor limite minimo', () => {
         cy.adicionarProduto('Xbox 720', '0.01', 'Preto, Branco')
         cy.get('#btn-salvar').click()
         cy.url('constains', 'http://165.227.93.41/lojinha-web/v2/produto/editar')
@@ -36,14 +36,14 @@ describe('Fluxo E2E', () => {
         //cy.screenshot()
         //cy.pageAccessibility()
     });
-    it('Criar um produto com valor acima de R$7000', () => {
+    it.only('Criar um produto com valor acima de R$7000', () => {
         cy.adicionarProduto('Xbox 720 2', '7000.01', 'Preto, Branco')
         cy.get('#btn-salvar').click()
         cy.url().should('eq', 'http://165.227.93.41/lojinha-web/v2/produto?error=O%20valor%20do%20produto%20deve%20estar%20entre%20R$%200,01%20e%20R$%207.000,00')
         //cy.screenshot()
         //cy.pageAccessibility()
     });
-    it('Criar um produto sem nome', () => {
+    it.only('Criar um produto sem nome', () => {
         cy.adicionarProduto('', '7000.00', 'Preto')
         cy.get('#btn-salvar').click()
         cy.wait(1000)
@@ -55,7 +55,7 @@ describe('Fluxo E2E', () => {
         //cy.screenshot()
         //cy.pageAccessibility()
     });
-    it('Criar um produto com o valor em branco', () => {
+    it.only('Criar um produto com o valor em branco', () => {
         cy.adicionarProduto('Xbox 720', '', 'Preto, Branco');
         cy.get('#btn-salvar').click();
         cy.wait(500)
@@ -69,7 +69,7 @@ describe('Fluxo E2E', () => {
         //cy.screenshot()
         //cy.pageAccessibility()
     });
-    it('Criar um produto com valor igual a 0', () => {
+    it.only('Criar um produto com valor igual a 0', () => {
         cy.adicionarProduto('Xbox 720', '0', 'Preto, Branco');
         cy.get('#btn-salvar').click();
         cy.wait(1000)
@@ -83,7 +83,7 @@ describe('Fluxo E2E', () => {
         //cy.screenshot()
         //cy.pageAccessibility()
     });
-    it('Criar um produto sem cor', () => {
+    it.only('Criar um produto sem cor', () => {
         cy.adicionarProduto('Xbox 720', '7000.00', '')
         cy.get('#btn-salvar').click()
         cy.url().then((currentUrl) => {
@@ -96,7 +96,7 @@ describe('Fluxo E2E', () => {
         //cy.screenshot()
         //cy.pageAccessibility()
     });
-    it('Criar um produto com o nome com mais de 100 caracteres', () => {
+    it.only('Criar um produto com o nome com mais de 100 caracteres', () => {
         cy.adicionarProduto('AAAAAAAAAAAAAAAAAAAASSSSSSSSSSS       AAAAA1111111111111111111111aaaaaaaaaaaaaaaaddsadsadgdfgdfg84984', '7000.00', 'Preto, Branco');
         cy.get('#btn-salvar').click()
         cy.url('constains', 'http://165.227.93.41/lojinha-web/v2/produto/editar')
@@ -106,7 +106,7 @@ describe('Fluxo E2E', () => {
         //cy.screenshot()
         //cy.pageAccessibility()
     });
-    it('Criar um produto com o nome 100 caracteres', () => {
+    it.only('Criar um produto com o nome 100 caracteres', () => {
         cy.adicionarProduto('AAAAAAAAAAAAAAAAAAAASSSSSSSSSSS       AAAAA1111111111111111111111aaaaaaaaaaaaaaaaddsadsadgdfgdfg8498', '7000.00', 'Preto, Branco');
         cy.get('#btn-salvar').click()
         cy.url('constains', 'http://165.227.93.41/lojinha-web/v2/produto/editar')
@@ -116,7 +116,7 @@ describe('Fluxo E2E', () => {
         //cy.screenshot()
         //cy.pageAccessibility()
     });
-    it('Criar um produto com o nome simbolos ASCII', () => {
+    it.only('Criar um produto com o nome simbolos ASCII', () => {
         cy.adicionarProduto('£€§√¼ﷲѾ', '7000.00', 'Preto, Branco');
         cy.get('#btn-salvar').click()
         cy.url('constains', 'http://165.227.93.41/lojinha-web/v2/produto/editar')
@@ -445,17 +445,34 @@ describe('Fluxo E2E', () => {
     });
 
 //EXCLUIR TODOS OS PRODUTOS QUE FORAM CRIADOS
-    /*it('Excluir um produto', () => {
-        cy.adicionarProduto('Xbox 360', '3500,00', 'Preto, Branco')
-        cy.get('#btn-salvar').click()
-        cy.url('constains', 'http://165.227.93.41/lojinha-web/v2/produto/editar')
-        cy.get('.waves-effect').eq(1).click()
-        cy.url().should('eq', 'http://165.227.93.41/lojinha-web/v2/produto')
-        cy.get('.material-icons').last().should('be.visible').click()
-        cy.get('.collection li .title a').contains('Xbox 360').should('not.exist')
-        cy.screenshot()
-        cy.pageAccessibility()
-    });*/
+    function excluirProdutos() {
+        cy.get('.collection li').then(($lis) => {
+            if ($lis.length > 0) {
+                // Encontra o botão de excluir no primeiro produto
+                cy.wrap($lis.first())
+                    .find('.material-icons')
+                    .contains('delete')
+                    .click();
+
+                // Aguarda para garantir que a exclusão seja processada
+                cy.wait(1000);
+
+                // Chama a função novamente para verificar e excluir o próximo produto
+                excluirProdutos();
+            } else {
+                cy.log('Todos os produtos foram excluídos.');
+            }
+        });
+    }
+
+
+    it.only('Deve excluir todos os produtos da lojinha', () => {
+        excluirProdutos();
+
+        // Verifica no final se não há mais produtos
+        cy.get('.collection li').should('not.exist');
+    });
+   
 });
 
 
