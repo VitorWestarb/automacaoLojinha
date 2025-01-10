@@ -1,11 +1,9 @@
 const { faker } = require("@faker-js/faker");
 
-let usuario = 'vitor2025'
-let senha = 'vitor2025'
 
 describe('Fluxo E2E', () => {
     beforeEach(() => {
-        cy.login(usuario, senha)
+        cy.login('vitor2025', 'vitor2025')
         cy.wait(2000)
         cy.url().should('eq', 'http://165.227.93.41/lojinha-web/v2/produto')
     });
