@@ -1,10 +1,12 @@
-name: "Execução agendado"
+name: "Execução por deploy"
 
-#Gatilho de execução agendada = woschedule: / - cron: "0 9 * * *"
- 
+#Gatilho de execução deploy 
 on:
-  schedule:
-    - cron: "0 9 * * *"
+  workflow_run:
+    workflows: ["Execução manual"] #Seria o nome do job do deploy
+    types: 
+      - completed
+  
  
 jobs:
   e2e-tests:
