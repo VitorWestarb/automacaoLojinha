@@ -1,6 +1,5 @@
 //Arrow function, mesma coisa que uma function()
 Cypress.Commands.add("login", (usuario, senha) => {
-    cy.visit("http://165.227.93.41/lojinha-web/v2/");
     cy.url().should('eq', 'http://165.227.93.41/lojinha-web/v2/');
     if (usuario) {
         cy.get('#usuario').should('be.visible').type(usuario, {force: true});

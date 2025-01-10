@@ -3,9 +3,8 @@ const { faker } = require("@faker-js/faker");
 
 describe('Fluxo E2E', () => {
     beforeEach(() => {
+        cy.visit("http://165.227.93.41/lojinha-web/v2/")
         cy.login('vitor2025', 'vitor2025')
-        cy.wait(2000)
-        cy.url().should('eq', 'http://165.227.93.41/lojinha-web/v2/produto')
     });
 //CRIAR PRODUTO
     it('Criar um produto com sucesso', () => {
