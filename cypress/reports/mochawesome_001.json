@@ -1,0 +1,249 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 7,
+    "passes": 5,
+    "pending": 0,
+    "failures": 2,
+    "start": "2025-01-08T16:31:43.454Z",
+    "end": "2025-01-08T16:32:20.150Z",
+    "duration": 36696,
+    "testsRegistered": 7,
+    "passPercent": 71.42857142857143,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "82bfee58-db1c-4fb2-83a1-90f542735628",
+      "title": "",
+      "fullFile": "cypress\\e2e\\gui\\testesE2E.cy.js",
+      "file": "cypress\\e2e\\gui\\testesE2E.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "31631fba-2adc-4b07-94a9-c79b7af17cdc",
+          "title": "Fluxo E2E",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Criar um produto com sucesso",
+              "fullTitle": "Fluxo E2E Criar um produto com sucesso",
+              "timedOut": null,
+              "duration": 5532,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.adicionarProduto('Xbox 720', '7000.00', 'Preto, Branco');\ncy.get('#btn-salvar').click();\ncy.url('constains', 'http://165.227.93.41/lojinha-web/v2/produto/editar');\ncy.get('.waves-effect').eq(1).click();\ncy.url().should('eq', 'http://165.227.93.41/lojinha-web/v2/produto');\ncy.get('.collection li').last().find('.title a').should('have.text', 'Xbox 720');\ncy.pageAccessibility();",
+              "err": {},
+              "uuid": "04ca3b74-982b-490a-8cc2-3f687cb543e2",
+              "parentUUID": "31631fba-2adc-4b07-94a9-c79b7af17cdc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Editar produto com sucesso",
+              "fullTitle": "Fluxo E2E Editar produto com sucesso",
+              "timedOut": null,
+              "duration": 6288,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.editarProduto('Xbox 360', '3500.00', 'Branco, Preto');\ncy.get('.waves-effect').eq(0).click();\ncy.url('constains', 'http://165.227.93.41/lojinha-web/v2/produto/editar');\ncy.get('.waves-effect').eq(1).click();\ncy.wait(2000);\ncy.url().should('eq', 'http://165.227.93.41/lojinha-web/v2/produto');\ncy.get('.collection li .title a').contains('Xbox 360').should('be.visible').first();\ncy.pageAccessibility();",
+              "err": {},
+              "uuid": "a5ec65bb-e9e9-4b3c-a77d-cfcd1bc08767",
+              "parentUUID": "31631fba-2adc-4b07-94a9-c79b7af17cdc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Voltar para lista de produto através de adicionar produto",
+              "fullTitle": "Fluxo E2E Voltar para lista de produto através de adicionar produto",
+              "timedOut": null,
+              "duration": 4737,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.listaProdutoAdicionar();\ncy.get('.waves-effect').eq(1).should('be.visible').and('have.css', 'background-color', 'rgb(158, 158, 158)').and('have.css', 'border-bottom-color', 'rgb(255, 255, 255)').click();\ncy.wait(2000);\ncy.url().should('eq', 'http://165.227.93.41/lojinha-web/v2/produto');\ncy.pageAccessibility();",
+              "err": {},
+              "uuid": "fc67fcfb-f204-4971-93a6-3d42ff0183fe",
+              "parentUUID": "31631fba-2adc-4b07-94a9-c79b7af17cdc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Voltar para lista de produto através de editar produto",
+              "fullTitle": "Fluxo E2E Voltar para lista de produto através de editar produto",
+              "timedOut": null,
+              "duration": 4766,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.listaProdutoEditar();\ncy.get('.waves-effect').eq(1).should('be.visible').and('have.css', 'background-color', 'rgb(158, 158, 158)').and('have.css', 'border-bottom-color', 'rgb(255, 255, 255)').click();\ncy.wait(2000);\ncy.url().should('eq', 'http://165.227.93.41/lojinha-web/v2/produto');\ncy.pageAccessibility();",
+              "err": {},
+              "uuid": "affa0281-fdeb-40eb-9c30-451484100060",
+              "parentUUID": "31631fba-2adc-4b07-94a9-c79b7af17cdc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Adicionar componente corretamente (editar produto)",
+              "fullTitle": "Fluxo E2E Adicionar componente corretamente (editar produto)",
+              "timedOut": null,
+              "duration": 4153,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\testesE2E.cy.js\\\\Fluxo E2E -- Adicionar componente corretamente (editar produto) (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.adicionarComponenteEditar('controle', '1');\ncy.get('.modal-close').eq(0).should('be.visible').and('have.css', 'background-color', 'rgb(38, 166, 154)').click();\ncy.wait(1500);\ncy.get('.title').should('be.visible').and('have.css', 'color', 'rgba(0, 0, 0, 0.87)').then($element => {\n  const text = $element.text().trim();\n  if (text !== 'controle') {\n    throw new Error(`Erro: O texto esperado era \"controle\", mas foi encontrado \"${text}\".`);\n  }\n});\ncy.contains('i', '1 unidade').should('be.visible');\ncy.get('.material-icons').eq(0).should('be.visible');\ncy.get('.material-icons').eq(1).should('be.visible');\ncy.pageAccessibility();",
+              "err": {
+                "message": "Error: Erro: O texto esperado era \"controle\", mas foi encontrado \"Lojinha controle\".",
+                "estack": "Error: Erro: O texto esperado era \"controle\", mas foi encontrado \"Lojinha controle\".\n    at Context.eval (webpack://automacao2/./cypress/e2e/gui/testesE2E.cy.js:79:26)",
+                "diff": null
+              },
+              "uuid": "1c1e9da1-ab9b-4548-a0a4-4de21829e4d0",
+              "parentUUID": "31631fba-2adc-4b07-94a9-c79b7af17cdc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Adicionar componente corretamente (adicionar produto)",
+              "fullTitle": "Fluxo E2E Adicionar componente corretamente (adicionar produto)",
+              "timedOut": null,
+              "duration": 5369,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\testesE2E.cy.js\\\\Fluxo E2E -- Adicionar componente corretamente (adicionar produto) (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.adicionarProduto('Xbox 720', '7000.00', 'Preto, Branco');\ncy.get('#btn-salvar').click();\ncy.url('constains', 'http://165.227.93.41/lojinha-web/v2/produto/editar');\ncy.adicionarComponenteAdicionar('controle', '1');\ncy.get('.modal-close').eq(0).should('be.visible').and('have.css', 'background-color', 'rgb(38, 166, 154)').click();\ncy.wait(1500);\ncy.get('.title').should('be.visible').and('have.css', 'color', 'rgba(0, 0, 0, 0.87)').then($element => {\n  const text = $element.text().trim();\n  if (text !== 'controle') {\n    throw new Error(`Erro: O texto esperado era \"controle\", mas foi encontrado \"${text}\".`);\n  }\n});\ncy.contains('i', '1 unidade').should('be.visible');\ncy.get('.material-icons').eq(0).should('be.visible');\ncy.get('.material-icons').eq(1).should('be.visible');\ncy.pageAccessibility();",
+              "err": {
+                "message": "Error: Erro: O texto esperado era \"controle\", mas foi encontrado \"Lojinha controle\".",
+                "estack": "Error: Erro: O texto esperado era \"controle\", mas foi encontrado \"Lojinha controle\".\n    at Context.eval (webpack://automacao2/./cypress/e2e/gui/testesE2E.cy.js:101:26)",
+                "diff": null
+              },
+              "uuid": "48ef350c-1aa2-43ab-bdc5-ac33a3ec49bd",
+              "parentUUID": "31631fba-2adc-4b07-94a9-c79b7af17cdc",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "04ca3b74-982b-490a-8cc2-3f687cb543e2",
+            "a5ec65bb-e9e9-4b3c-a77d-cfcd1bc08767",
+            "fc67fcfb-f204-4971-93a6-3d42ff0183fe",
+            "affa0281-fdeb-40eb-9c30-451484100060"
+          ],
+          "failures": [
+            "1c1e9da1-ab9b-4548-a0a4-4de21829e4d0",
+            "48ef350c-1aa2-43ab-bdc5-ac33a3ec49bd"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 30845,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "cdbdd89f-7af8-4984-806c-dbf8860ed372",
+          "title": "Login inválido",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login com credenciais inválidas",
+              "fullTitle": "Login inválido Login com credenciais inválidas",
+              "timedOut": null,
+              "duration": 2102,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(faker.person.firstName(), faker.internet.password());\ncy.url().should('eq', 'http://165.227.93.41/lojinha-web/v2/?error=Falha%20ao%20fazer%20o%20login');\ncy.pageAccessibility();",
+              "err": {},
+              "uuid": "726a771c-6573-43ef-b861-f4f434759474",
+              "parentUUID": "cdbdd89f-7af8-4984-806c-dbf8860ed372",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "726a771c-6573-43ef-b861-f4f434759474"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2102,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "embeddedScreenshots": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
