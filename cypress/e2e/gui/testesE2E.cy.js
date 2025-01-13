@@ -6,7 +6,7 @@ describe('Fluxo E2E', () => {
         cy.login('vitor2025', 'vitor2025')
     });
 //CRIAR PRODUTO
-    it.only('Criar um produto com sucesso', () => {
+    it('Criar um produto com sucesso', () => {
         cy.adicionarProduto('Xbox 720', '3500,00', 'Preto, Branco')
         cy.get('#btn-salvar').click()
         cy.url('constains', 'http://165.227.93.41/lojinha-web/v2/produto/editar')
@@ -16,7 +16,7 @@ describe('Fluxo E2E', () => {
         //cy.screenshot()
         //cy.pageAccessibility()
     });
-    it.only('Criar um produto com valor limite máximo', () => {
+    it('Criar um produto com valor limite máximo', () => {
         cy.adicionarProduto('Xbox 720', '7000.00', 'Preto, Branco')
         cy.get('#btn-salvar').click()
         cy.url('constains', 'http://165.227.93.41/lojinha-web/v2/produto/editar')
@@ -26,7 +26,7 @@ describe('Fluxo E2E', () => {
         //cy.screenshot()
         //cy.pageAccessibility()
     });
-    it.only('Criar um produto com valor limite minimo', () => {
+    it('Criar um produto com valor limite minimo', () => {
         cy.adicionarProduto('Xbox 720', '0.01', 'Preto, Branco')
         cy.get('#btn-salvar').click()
         cy.url('constains', 'http://165.227.93.41/lojinha-web/v2/produto/editar')
@@ -36,14 +36,14 @@ describe('Fluxo E2E', () => {
         //cy.screenshot()
         //cy.pageAccessibility()
     });
-    it.only('Criar um produto com valor acima de R$7000', () => {
+    it('Criar um produto com valor acima de R$7000', () => {
         cy.adicionarProduto('Xbox 720 2', '7000.01', 'Preto, Branco')
         cy.get('#btn-salvar').click()
         cy.url().should('eq', 'http://165.227.93.41/lojinha-web/v2/produto?error=O%20valor%20do%20produto%20deve%20estar%20entre%20R$%200,01%20e%20R$%207.000,00')
         //cy.screenshot()
         //cy.pageAccessibility()
     });
-    it.only('Criar um produto sem nome', () => {
+    it('Criar um produto sem nome', () => {
         cy.adicionarProduto('', '7000.00', 'Preto')
         cy.get('#btn-salvar').click()
         cy.wait(1000)
@@ -55,7 +55,7 @@ describe('Fluxo E2E', () => {
         //cy.screenshot()
         //cy.pageAccessibility()
     });
-    it.only('Criar um produto com o valor em branco', () => {
+    it('Criar um produto com o valor em branco', () => {
         cy.adicionarProduto('Xbox 720', '', 'Preto, Branco');
         cy.get('#btn-salvar').click();
         cy.wait(500)
@@ -69,7 +69,7 @@ describe('Fluxo E2E', () => {
         //cy.screenshot()
         //cy.pageAccessibility()
     });
-    it.only('Criar um produto com valor igual a 0', () => {
+    it('Criar um produto com valor igual a 0', () => {
         cy.adicionarProduto('Xbox 720', '0', 'Preto, Branco');
         cy.get('#btn-salvar').click();
         cy.wait(1000)
@@ -83,7 +83,7 @@ describe('Fluxo E2E', () => {
         //cy.screenshot()
         //cy.pageAccessibility()
     });
-    it.only('Criar um produto sem cor', () => {
+    it('Criar um produto sem cor', () => {
         cy.adicionarProduto('Xbox 720', '7000.00', '')
         cy.get('#btn-salvar').click()
         cy.url().then((currentUrl) => {
@@ -96,7 +96,7 @@ describe('Fluxo E2E', () => {
         //cy.screenshot()
         //cy.pageAccessibility()
     });
-    it.only('Criar um produto com o nome com mais de 100 caracteres', () => {
+    it('Criar um produto com o nome com mais de 100 caracteres', () => {
         cy.adicionarProduto('AAAAAAAAAAAAAAAAAAAASSSSSSSSSSS       AAAAA1111111111111111111111aaaaaaaaaaaaaaaaddsadsadgdfgdfg84984', '7000.00', 'Preto, Branco');
         cy.get('#btn-salvar').click()
         cy.url('constains', 'http://165.227.93.41/lojinha-web/v2/produto/editar')
@@ -106,7 +106,7 @@ describe('Fluxo E2E', () => {
         //cy.screenshot()
         //cy.pageAccessibility()
     });
-    it.only('Criar um produto com o nome 100 caracteres', () => {
+    it('Criar um produto com o nome 100 caracteres', () => {
         cy.adicionarProduto('AAAAAAAAAAAAAAAAAAAASSSSSSSSSSS       AAAAA1111111111111111111111aaaaaaaaaaaaaaaaddsadsadgdfgdfg8498', '7000.00', 'Preto, Branco');
         cy.get('#btn-salvar').click()
         cy.url('constains', 'http://165.227.93.41/lojinha-web/v2/produto/editar')
@@ -116,7 +116,7 @@ describe('Fluxo E2E', () => {
         //cy.screenshot()
         //cy.pageAccessibility()
     });
-    it.only('Criar um produto com o nome simbolos ASCII', () => {
+    it('Criar um produto com o nome simbolos ASCII', () => {
         cy.adicionarProduto('£€§√¼ﷲѾ', '7000.00', 'Preto, Branco');
         cy.get('#btn-salvar').click()
         cy.url('constains', 'http://165.227.93.41/lojinha-web/v2/produto/editar')
@@ -466,7 +466,7 @@ describe('Fluxo E2E', () => {
     }
 
 
-    it.only('Deve excluir todos os produtos da lojinha', () => {
+    it('Deve excluir todos os produtos da lojinha', () => {
         excluirProdutos();
 
         // Verifica no final se não há mais produtos
