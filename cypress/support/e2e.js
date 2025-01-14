@@ -6,6 +6,7 @@ import './pages/novoComponente/novoComponente-commands'
 import 'cypress-axe'
 import './accessibility-commands'
 import 'cypress-mochawesome-reporter/register'
+import 'cypress-plugin-api'
 
 require('cypress-xpath');
 
