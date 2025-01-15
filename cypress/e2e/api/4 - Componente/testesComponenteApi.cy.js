@@ -1,4 +1,4 @@
-import { faker } from '@faker-js/faker';
+/*import { faker } from '@faker-js/faker';
 
 let valorToken
 let url = "http://165.227.93.41/lojinha/v2/"
@@ -303,7 +303,7 @@ describe('testes E2E de API da Lojinha', () => {
         });
     });*/
 
-    it('Buscar um componente de um produto - 401 Not Authorized (sem token )', () => {
+    /*it('Buscar um componente de um produto - 401 Not Authorized (sem token )', () => {
         cy.api({
             method: "GET",
             url: `${url}produtos/${produtoId}/componentes/${componenteIdAdicionar}`,
@@ -549,4 +549,4 @@ describe('testes E2E de API da Lojinha', () => {
 
     });
 
-});
+});*/

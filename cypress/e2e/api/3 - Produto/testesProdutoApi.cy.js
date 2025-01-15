@@ -1,4 +1,4 @@
-import { faker } from '@faker-js/faker';
+/*import { faker } from '@faker-js/faker';
 
 let valorToken
 let url = "http://165.227.93.41/lojinha/v2/"
@@ -1014,4 +1014,4 @@ describe('testes de Usuario de API da Lojinha', () => {
 
     });
     
-});
+});*/

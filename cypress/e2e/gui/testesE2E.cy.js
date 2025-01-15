@@ -1,7 +1,7 @@
 const { faker } = require("@faker-js/faker");
 
 
-describe('Fluxo E2E', () => {
+describe('Fluxo E2E (Lojinha Web)', () => {
     beforeEach(() => {
         cy.login('vitor2025', 'vitor2025')
     });
@@ -477,7 +477,7 @@ describe('Fluxo E2E', () => {
 
 
 
-describe('Login inválidos', () => {
+describe('Login inválidos (Lojinha Web)', () => {
     it('Login com credenciais inválidas', () => {
         cy.login(faker.person.firstName(), faker.internet.password())
         cy.url().should('eq', 'http://165.227.93.41/lojinha-web/v2/?error=Falha%20ao%20fazer%20o%20login')

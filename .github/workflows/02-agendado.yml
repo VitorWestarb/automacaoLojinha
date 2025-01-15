@@ -4,7 +4,7 @@ name: "Execução agendado"
  
 on:
   schedule:
-    - cron: ""
+    - cron: "" #para agendar precisar o exemplo acima (cron: ...)
  
 jobs:
   e2e-tests:
