@@ -1,9 +1,9 @@
 name: "Execução por integração"
 
-#Gatilho de execução deploy 
+#Gatilho de execução integrado
 on:
   workflow_run:
-    workflows: ["Execução manual"] #Seria o nome do job do deploy
+    workflows: ["Execução por deploy"] #Executa após o deploy
     types: 
       - completed
   
