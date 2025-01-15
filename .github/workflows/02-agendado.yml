@@ -1,4 +1,4 @@
-#name: "Execução agendado"
+name: "Execução agendado"
 
 #Gatilho de execução agendada = woschedule: / - cron: "0 9 * * *"
  
