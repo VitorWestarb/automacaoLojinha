@@ -669,7 +669,7 @@ describe('testes de Produto de API da Lojinha', () => {
         });
     });
 
-    it('Buscar um dos produtos do usuário - 404 Not Found (sem produtoId', () => {
+    it('Buscar um dos produtos do usuário - 404 Not Found (sem produtoId)', () => {
         cy.api({
             method: "GET",
             url: `${url}produtos/`,
