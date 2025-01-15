@@ -1,23 +1,24 @@
-name: "Execução agendado"
+name: "Execução agendada"
 
 #Gatilho de execução agendada = woschedule: / - cron: "0 9 * * *"
- 
+
 on:
   schedule:
     - cron: "" #para agendar precisar o exemplo acima (cron: ...)
- 
+
 jobs:
   e2e-tests:
-    runs-on: ["ubuntu-latest"]
- 
+    runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
- 
+
       - name: Instalando testes de acessibilidade
-       run: npm i cypress-axe cypress-axe-core
- 
+        run: npm i cypress-axe cypress-axe-core
+
       - name: Instalando o relatório de testes
         run: npm i mochawesome cypress-mochawesome-reporter --save-dev
 
       - name: Testes E2E
         run: npx cypress run
+
