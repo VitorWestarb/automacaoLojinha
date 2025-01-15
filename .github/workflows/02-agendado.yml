@@ -1,10 +1,10 @@
 name: "Execução agendado"
 
-Gatilho de execução agendada = woschedule: / - cron: "0 9 * * *"
+#Gatilho de execução agendada = woschedule: / - cron: "0 9 * * *"
  
 on:
   schedule:
-    - cron: "0 0 0 0 0"
+    - cron: ""
  
 jobs:
   e2e-tests:
