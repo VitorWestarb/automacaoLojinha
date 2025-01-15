@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
  
-     - name: Instalando testes de acessibilidade
+      - name: Instalando testes de acessibilidade
        run: npm i cypress-axe cypress-axe-core
  
       - name: Instalando o relatório de testes
